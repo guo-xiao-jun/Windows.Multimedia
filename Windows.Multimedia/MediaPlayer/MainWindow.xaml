@@ -1,0 +1,37 @@
+﻿<Window x:Class="MediaPlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MediaPlayer"
+        mc:Ignorable="d"
+        Title="MediaPlayer" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="录音测试">
+            <StackPanel Grid.Row="1" 
+                    Orientation="Horizontal">
+                <ToggleButton Width="100" 
+                              Name="tbRecord" Checked="tbRecord_Checked" Unchecked="tbRecord_Unchecked">
+                    <ToggleButton.Style>
+                        <Style TargetType="ToggleButton">
+                            <Setter Property="Content" Value="开始录音"></Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsChecked" Value="true" >
+                                    <Trigger.Setters>
+                                        <Setter Property="Content" Value="结束录音"></Setter>
+                                    </Trigger.Setters>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ToggleButton.Style>
+                </ToggleButton>
+            </StackPanel>
+        </GroupBox>
+    
+    </Grid>
+</Window>
